@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>video example</title>
+</head>
+
+<body>
+    <video id="myVideo" height="400" width="400" autoplay onended="run();" controls>
+        <source id="ss"  src="videos/video1.mp4" type='video/mp4'>
+    </video>
+
+    <script>
+        video_count =1;
+        videoPlayer = document.getElementById("ss");
+        video = document.getElementById("myVideo");
+
+        function run(){
+            video_count++;
+            if (video_count == 4) video_count = 1;
+            videoPlayer.setAttribute("src","videos/video"+video_count+".mp4");
+            video.load();
+            video.play();
+
+       }
+
+    </script>
+</body>
+</html>
